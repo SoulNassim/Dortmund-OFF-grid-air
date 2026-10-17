@@ -410,28 +410,31 @@
           <rect x="430" y="217" width="100" height="323" fill="url(#bld)" stroke="#F59E0B" stroke-opacity=".7" stroke-width="2"/>
           <text x="480" y="300" fill="#FBBF24" font-size="20" font-weight="700" text-anchor="middle">U-Tower</text>
           <text x="480" y="326" fill="#FBBF24" font-size="18" text-anchor="middle" opacity=".8">95 m</text>
-          <rect x="640" y="460" width="70" height="80" fill="url(#bld)" stroke="#374151"/>
+          <!-- 3rd tower (Ellipson / Hbf Tower 78 m) creating urban canyon that also blocks optical LoS to DR-01 -->
+          <rect x="655" y="275" width="95" height="265" fill="url(#bld)" stroke="#F59E0B" stroke-opacity=".55" stroke-width="1.8"/>
+          <text x="702" y="345" fill="#FBBF24" font-size="17" font-weight="600" text-anchor="middle">Ellipson</text>
+          <text x="702" y="368" fill="#FBBF24" font-size="15" text-anchor="middle" opacity=".8">78 m</text>
           <!-- HQ mast -->
           <line x1="80" y1="540" x2="80" y2="319" stroke="#10B981" stroke-width="2" stroke-dasharray="3 5"/>
           <circle cx="80" cy="319" r="11" fill="#07080B" stroke="#10B981" stroke-width="3"/>
           <text x="80" y="290" fill="#F5F5F7" font-size="19" font-weight="600" text-anchor="middle">HQ · 65 m</text>
           <!-- blocked direct laser HQ -> DR-03 -->
           <line x1="80" y1="319" x2="430" y2="353" stroke="#10B981" stroke-width="3.5" opacity=".75"/>
-          <line x1="430" y1="353" x2="600" y2="370" stroke="#EF4444" stroke-width="2" stroke-dasharray="4 7" opacity=".45"/>
+          <line x1="430" y1="353" x2="592" y2="370" stroke="#EF4444" stroke-width="2" stroke-dasharray="4 7" opacity=".45"/>
           <g stroke="#EF4444" stroke-width="4" stroke-linecap="round"><line x1="420" y1="343" x2="440" y2="363"/><line x1="440" y1="343" x2="420" y2="363"/></g>
           <text x="395" y="388" fill="#EF4444" font-size="15" font-weight="600" text-anchor="end" font-family="JetBrains Mono">LoS BLOCKED</text>
-          <!-- active relay path: HQ <--(FSOC Laser)-- DR-01 <--(DECT NR+ Mesh)-- DR-03 -->
-          <line x1="80" y1="319" x2="780" y2="132" stroke="#10B981" stroke-width="4"/>
-          <text x="415" y="198" fill="#34D399" font-size="16" font-weight="600" text-anchor="middle" font-family="JetBrains Mono" transform="rotate(-15 415 198)">1. FSOC LASER · 1 Gbps</text>
-          <line x1="600" y1="370" x2="780" y2="132" stroke="#F59E0B" stroke-width="3.5" stroke-dasharray="9 7"/>
-          <text x="728" y="268" fill="#FBBF24" font-size="16" font-weight="600" text-anchor="start" font-family="JetBrains Mono">2. DECT NR+ RELAY</text>
-          <text x="728" y="290" fill="#FDE68A" font-size="14" text-anchor="start" font-family="JetBrains Mono">1.9 GHz Hop → DR-01</text>
-          <!-- canyon drone DR-03 -->
-          <circle cx="600" cy="370" r="10" fill="#F5F5F7"/><circle cx="600" cy="370" r="20" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
-          <text x="600" y="412" fill="#F5F5F7" font-size="19" font-weight="600" text-anchor="middle">DR-03 · 50 m</text>
+          <!-- active relay path: HQ <--(FSOC Laser)-- DR-01 <--(DECT NR+ NLOS through 78m tower)-- DR-03 -->
+          <line x1="80" y1="319" x2="805" y2="132" stroke="#10B981" stroke-width="4"/>
+          <text x="425" y="198" fill="#34D399" font-size="16" font-weight="600" text-anchor="middle" font-family="JetBrains Mono" transform="rotate(-14.5 425 198)">1. FSOC LASER · 1 Gbps (LoS)</text>
+          <line x1="592" y1="370" x2="805" y2="132" stroke="#F59E0B" stroke-width="3.5" stroke-dasharray="9 7"/>
+          <text x="765" y="242" fill="#FBBF24" font-size="15.5" font-weight="600" text-anchor="start" font-family="JetBrains Mono">2. DECT NR+ (NLOS)</text>
+          <text x="765" y="263" fill="#FDE68A" font-size="13.5" text-anchor="start" font-family="JetBrains Mono">Penetrates 78m canyon</text>
+          <!-- canyon drone DR-03 trapped between 95m U-Tower & 78m Ellipson -->
+          <circle cx="592" cy="370" r="10" fill="#F5F5F7"/><circle cx="592" cy="370" r="20" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
+          <text x="592" y="412" fill="#F5F5F7" font-size="19" font-weight="600" text-anchor="middle">DR-03 · 50 m</text>
           <!-- relay DR-01 -->
-          <circle cx="780" cy="132" r="10" fill="#F5F5F7"/><circle cx="780" cy="132" r="20" fill="none" stroke="#10B981" stroke-width="2.5"/>
-          <text x="780" y="95" fill="#34D399" font-size="19" font-weight="600" text-anchor="middle">Relay DR-01 · 120 m</text>
+          <circle cx="805" cy="132" r="10" fill="#F5F5F7"/><circle cx="805" cy="132" r="20" fill="none" stroke="#10B981" stroke-width="2.5"/>
+          <text x="805" y="95" fill="#34D399" font-size="19" font-weight="600" text-anchor="middle">Relay DR-01 · 120 m</text>
         </svg>
       </div>
       <div class="facts">
