@@ -123,23 +123,21 @@
   .fact .v { font-size: 26px; color: var(--sub); margin-top: 12px; line-height: 1.4; }
 
   /* ---------- link comparison ---------- */
-  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 0; flex: 1; margin-top: 32px; border-top: 1px solid var(--line); }
-  .duo > div { padding: 42px 72px 0 0; }
-  .duo > div + div { padding-left: 72px; border-left: 1px solid var(--line); }
-  .duo .band { font-family: var(--mono); font-size: 22px; letter-spacing: .14em; text-transform: uppercase; }
-  .duo h3 { font-size: 60px; font-weight: 700; letter-spacing: -0.03em; margin: 14px 0 30px; }
-  .spec { display: grid; grid-template-columns: 260px 1fr; row-gap: 20px; font-size: 26px; }
+  .duo { display: grid; grid-template-columns: 0.9fr 1.15fr; gap: 0; flex: 1; margin-top: 36px; border-top: 1px solid var(--line); }
+  .duo > div { padding: 44px 64px 0 0; }
+  .duo > div + div { padding-left: 64px; border-left: 1px solid var(--line); }
+  .duo .band { font-family: var(--mono); font-size: 21px; letter-spacing: .14em; text-transform: uppercase; }
+  .duo h3 { font-size: 58px; font-weight: 700; letter-spacing: -0.03em; margin: 12px 0 28px; }
+  .spec { display: grid; grid-template-columns: 230px 1fr; row-gap: 20px; font-size: 26px; }
   .spec dt { color: var(--mut); }
   .spec dd { color: var(--ink); }
-  .motto { font-size: 36px; font-weight: 600; letter-spacing: -0.02em; text-align: center; color: var(--sub); margin-top: 16px; }
-  .motto b { color: var(--ink); font-weight: 700; }
-  .swap-bar {
-    display: flex; justify-content: space-between; align-items: center; gap: 28px;
-    margin-top: 22px; padding: 18px 28px; border-radius: 16px;
-    border: 1px solid var(--line); background: rgba(255,255,255,0.025);
-    font-family: var(--mono); font-size: 20px; color: var(--sub);
+  .dect-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 26px; }
+  .dect-pills span {
+    font-family: var(--mono); font-size: 17px; font-weight: 600; padding: 8px 16px; border-radius: 999px;
+    background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.4); color: #FDE68A;
   }
-  .swap-bar b { color: var(--ink); font-weight: 600; }
+  .motto { font-size: 34px; font-weight: 600; letter-spacing: -0.02em; text-align: center; color: var(--sub); margin-top: 24px; }
+  .motto b { color: var(--ink); font-weight: 700; }
 
   /* ---------- regime rows ---------- */
   .rows { display: flex; flex-direction: column; gap: 40px; }
@@ -389,7 +387,7 @@
   </section>
 
   <!-- 4 · OUR SHIFT TO OPTICAL + 3D GEOMETRY -->
-  <section class="slide" data-notes="When DR-03 drops to 50 m behind the 95 m U-Tower, the direct laser from HQ hits the facade. So DR-03 switches to 1.9 GHz DECT NR+ mesh radio, bounces its signal up to Relay DR-01 orbiting at 120 m above the roof, and DR-01 beams it down to HQ via 1 Gbps FSOC laser. (~20 s)">
+  <section class="slide" data-notes="When DR-03 drops to 50 m between the 95 m U-Tower and the 88 m second tower, both direct lasers — to HQ and to Relay DR-01 — are blocked by concrete. So DR-03 uses private 1.9 GHz DECT NR+ radio to penetrate the canyon up to Relay DR-01 at 120 m, which beams 1 Gbps FSOC laser back to HQ. (~25 s)">
     <div class="eyebrow">Our answer · Move off jammed RF</div>
     <div class="title">Optical lasers beat the jammer. <span class="dim">Now the city is the obstacle.</span></div>
     <div class="split">
@@ -399,84 +397,90 @@
             <linearGradient id="bld" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F2937"/><stop offset="1" stop-color="#111827"/></linearGradient>
           </defs>
           <line x1="0" y1="540" x2="900" y2="540" stroke="#27272A" stroke-width="2"/>
-          <!-- 95 m roof reference -->
+          <!-- 95 m & 120 m reference lines -->
           <line x1="40" y1="217" x2="880" y2="217" stroke="#3F3F46" stroke-dasharray="4 8"/>
           <text x="880" y="207" fill="#71717A" font-size="17" text-anchor="end" font-family="JetBrains Mono">95 m</text>
           <line x1="40" y1="132" x2="880" y2="132" stroke="#3F3F46" stroke-dasharray="4 8"/>
           <text x="880" y="122" fill="#71717A" font-size="17" text-anchor="end" font-family="JetBrains Mono">120 m</text>
-          <!-- blocks -->
+          <!-- 1st block -->
           <rect x="180" y="455" width="90" height="85" fill="url(#bld)" stroke="#374151"/>
           <text x="225" y="445" fill="#71717A" font-size="16" text-anchor="middle">Block 25 m</text>
+          <!-- 2nd tower: U-Tower 95 m -->
           <rect x="430" y="217" width="100" height="323" fill="url(#bld)" stroke="#F59E0B" stroke-opacity=".7" stroke-width="2"/>
           <text x="480" y="300" fill="#FBBF24" font-size="20" font-weight="700" text-anchor="middle">U-Tower</text>
           <text x="480" y="326" fill="#FBBF24" font-size="18" text-anchor="middle" opacity=".8">95 m</text>
-          <!-- 3rd tower (Ellipson / Hbf Tower 78 m) creating urban canyon that also blocks optical LoS to DR-01 -->
-          <rect x="655" y="275" width="95" height="265" fill="url(#bld)" stroke="#F59E0B" stroke-opacity=".55" stroke-width="1.8"/>
-          <text x="702" y="345" fill="#FBBF24" font-size="17" font-weight="600" text-anchor="middle">Ellipson</text>
-          <text x="702" y="368" fill="#FBBF24" font-size="15" text-anchor="middle" opacity=".8">78 m</text>
+          <!-- 3rd tower: high 88 m tower blocking direct optical LoS between DR-03 and DR-01 -->
+          <rect x="660" y="232" width="85" height="308" fill="url(#bld)" stroke="#F59E0B" stroke-opacity=".6" stroke-width="2"/>
+          <text x="702" y="315" fill="#FBBF24" font-size="18" font-weight="700" text-anchor="middle">Tower</text>
+          <text x="702" y="340" fill="#FBBF24" font-size="17" text-anchor="middle" opacity=".8">88 m</text>
           <!-- HQ mast -->
           <line x1="80" y1="540" x2="80" y2="319" stroke="#10B981" stroke-width="2" stroke-dasharray="3 5"/>
           <circle cx="80" cy="319" r="11" fill="#07080B" stroke="#10B981" stroke-width="3"/>
           <text x="80" y="290" fill="#F5F5F7" font-size="19" font-weight="600" text-anchor="middle">HQ · 65 m</text>
           <!-- blocked direct laser HQ -> DR-03 -->
           <line x1="80" y1="319" x2="430" y2="353" stroke="#10B981" stroke-width="3.5" opacity=".75"/>
-          <line x1="430" y1="353" x2="592" y2="370" stroke="#EF4444" stroke-width="2" stroke-dasharray="4 7" opacity=".45"/>
+          <line x1="430" y1="353" x2="585" y2="370" stroke="#EF4444" stroke-width="2" stroke-dasharray="4 7" opacity=".45"/>
           <g stroke="#EF4444" stroke-width="4" stroke-linecap="round"><line x1="420" y1="343" x2="440" y2="363"/><line x1="440" y1="343" x2="420" y2="363"/></g>
           <text x="395" y="388" fill="#EF4444" font-size="15" font-weight="600" text-anchor="end" font-family="JetBrains Mono">LoS BLOCKED</text>
-          <!-- active relay path: HQ <--(FSOC Laser)-- DR-01 <--(DECT NR+ NLOS through 78m tower)-- DR-03 -->
+          <!-- active relay path -->
           <line x1="80" y1="319" x2="805" y2="132" stroke="#10B981" stroke-width="4"/>
-          <text x="425" y="198" fill="#34D399" font-size="16" font-weight="600" text-anchor="middle" font-family="JetBrains Mono" transform="rotate(-14.5 425 198)">1. FSOC LASER · 1 Gbps (LoS)</text>
-          <line x1="592" y1="370" x2="805" y2="132" stroke="#F59E0B" stroke-width="3.5" stroke-dasharray="9 7"/>
-          <text x="765" y="242" fill="#FBBF24" font-size="15.5" font-weight="600" text-anchor="start" font-family="JetBrains Mono">2. DECT NR+ (NLOS)</text>
-          <text x="765" y="263" fill="#FDE68A" font-size="13.5" text-anchor="start" font-family="JetBrains Mono">Penetrates 78m canyon</text>
-          <!-- canyon drone DR-03 trapped between 95m U-Tower & 78m Ellipson -->
-          <circle cx="592" cy="370" r="10" fill="#F5F5F7"/><circle cx="592" cy="370" r="20" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
-          <text x="592" y="412" fill="#F5F5F7" font-size="19" font-weight="600" text-anchor="middle">DR-03 · 50 m</text>
+          <text x="425" y="198" fill="#34D399" font-size="16" font-weight="600" text-anchor="middle" font-family="JetBrains Mono" transform="rotate(-14.5 425 198)">1. FSOC LASER · 1 Gbps</text>
+          <line x1="585" y1="370" x2="805" y2="132" stroke="#F59E0B" stroke-width="3.5" stroke-dasharray="9 7"/>
+          <text x="765" y="255" fill="#FBBF24" font-size="15.5" font-weight="600" text-anchor="start" font-family="JetBrains Mono">2. DECT NR+ RELAY</text>
+          <text x="765" y="277" fill="#9A9AA3" font-size="14" text-anchor="start" font-family="JetBrains Mono">1.9 GHz NLOS → DR-01</text>
+          <!-- canyon drone DR-03 trapped between 95m and 88m towers -->
+          <circle cx="585" cy="370" r="10" fill="#F5F5F7"/><circle cx="585" cy="370" r="20" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
+          <text x="585" y="412" fill="#F5F5F7" font-size="19" font-weight="600" text-anchor="middle">DR-03 · 50 m</text>
           <!-- relay DR-01 -->
           <circle cx="805" cy="132" r="10" fill="#F5F5F7"/><circle cx="805" cy="132" r="20" fill="none" stroke="#10B981" stroke-width="2.5"/>
           <text x="805" y="95" fill="#34D399" font-size="19" font-weight="600" text-anchor="middle">Relay DR-01 · 120 m</text>
         </svg>
       </div>
       <div class="facts">
-        <div class="fact b"><div class="k">95 m</div><div class="v">U-Tower blocks direct laser to DR-03 (50 m).</div></div>
-        <div class="fact b"><div class="k c-fsoc">120 m</div><div class="v">Relay DR-01 &amp; DR-02 orbit above every roof.</div></div>
-        <div class="fact b"><div class="k c-dect">2-Hop</div><div class="v">DR-03 bounces 1.9 GHz DECT NR+ through DR-01 to HQ.</div></div>
+        <div class="fact b"><div class="k">95 m &amp; 88 m</div><div class="v">Two towers trap DR-03 (50 m) in a canyon with zero optical line of sight.</div></div>
+        <div class="fact b"><div class="k c-fsoc">120 m</div><div class="v">Relay DR-01 &amp; DR-02 orbit above every roof with clear laser to HQ.</div></div>
+        <div class="fact b"><div class="k c-dect">2-Hop</div><div class="v">DR-03 penetrates the 88 m tower via 1.9 GHz DECT NR+ up to DR-01.</div></div>
       </div>
     </div>
   </section>
 
-  <!-- 4 · TWO LINKS + SWAP & BNETZA -->
-  <section class="slide" data-notes="Every drone carries a 225 gram, 9.7 watt hybrid pod. First, a 1550 nm eye-safe laser: gigabit, 2 ms latency, completely immune to RF jamming — though attenuated to 520 m in dense fog due to Mie scattering. Second, DECT NR+ at 1.9 GHz: license-exempt European ETSI spectrum, zero aviation VHF or public 4G/5G dependency, immune to fog, and survives jamming via frequency hopping. Every packet is signed with HMAC-SHA256. (~25 s)">
-    <div class="eyebrow">Hybrid mesh · Hardware &amp; regulatory feasibility</div>
-    <div class="title">Two off-grid links per drone.</div>
+  <!-- 5 · TWO LINKS (EMPHASIS ON PRIVATE, INDEPENDENT DECT NR+) -->
+  <section class="slide" data-notes="Every drone carries two off-grid links in a 225 g pod. Primary is a 1550 nm eye-safe laser: 1 Gbps and zero RF jamming loss. Fallback is DECT NR+ at 1.9 GHz — the world's first non-cellular 5G mesh standard. Why DECT NR+? It is 100% private and independent: no SIM cards, no Telekom or Vodafone, no ground base stations, and license-exempt in Europe. Drones form their own self-healing 1.9 GHz mesh that diffracts through buildings and dense fog. (~30 s)">
+    <div class="eyebrow">Hybrid Mesh · Why FSOC + Private DECT NR+</div>
+    <div class="title">Two <span class="c-dect">100 % private</span> off-grid links.</div>
     <div class="duo">
       <div>
-        <div class="band c-fsoc">Primary · Optical (Unlicensed Class 1 Eye-Safe)</div>
+        <div class="band c-fsoc">Primary · Optical Backbone</div>
         <h3>FSOC Laser <span class="c-sub" style="font-weight:400">1550 nm</span></h3>
+        <div class="dect-pills">
+          <span style="background:rgba(16,185,129,0.12);border-color:rgba(16,185,129,0.4);color:#6EE7B7">Unlicensed Eye-Safe</span>
+          <span style="background:rgba(16,185,129,0.12);border-color:rgba(16,185,129,0.4);color:#6EE7B7">Zero RF Footprint</span>
+        </div>
         <dl class="spec">
-          <dt>Throughput / Lat</dt><dd>up to 1 Gbps · 2 ms</dd>
-          <dt>RF jamming</dt><dd class="c-fsoc">immune · 0 % loss</dd>
-          <dt>Weather (Fog)</dt><dd class="c-dect">Mie scattering (&gt;60 dB/km → 520 m max)</dd>
-          <dt>Needs</dt><dd>clear 3D line of sight</dd>
+          <dt>Speed / Latency</dt><dd>1 Gbps · 2 ms</dd>
+          <dt>RF Jamming</dt><dd class="c-fsoc">Immune · 0 % packet loss</dd>
+          <dt>Dense Fog</dt><dd class="c-dect">Mie scatter (&gt;520 m drops to DECT)</dd>
+          <dt>Requirement</dt><dd>Clear 3D line of sight</dd>
         </dl>
       </div>
       <div>
-        <div class="band c-dect">Fallback · Radio (ETSI EN 301 406-2 · BNetzA Exempt)</div>
+        <div class="band c-dect">Fallback · Non-Cellular 5G Mesh (ETSI Standard)</div>
         <h3>DECT NR+ <span class="c-sub" style="font-weight:400">1.9 GHz</span></h3>
+        <div class="dect-pills">
+          <span>100 % Private</span>
+          <span>No SIM / No Carrier</span>
+          <span>BNetzA License-Exempt</span>
+          <span>Self-Healing P2P</span>
+        </div>
         <dl class="spec">
-          <dt>Throughput / Lat</dt><dd>4.8 Mbps · 14–18 ms</dd>
-          <dt>RF jamming</dt><dd class="c-dect">survives by TDMA/FDMA hopping</dd>
-          <dt>Weather (Fog)</dt><dd class="c-fsoc">0 dB attenuation · 100 % weather-immune</dd>
-          <dt>Needs</dt><dd>nothing — diffracts around buildings</dd>
+          <dt>Independence</dt><dd><b>Zero cell towers</b> — drones are the network</dd>
+          <dt>Protected Band</dt><dd>1880–1900 MHz (outside jammed 2.4 / 5.8 GHz)</dd>
+          <dt>Anti-Jamming</dt><dd class="c-dect">TDMA/FDMA frequency hopping + HMAC-SHA256</dd>
+          <dt>NLOS &amp; Fog</dt><dd class="c-fsoc">Penetrates canyons · 0 dB fog loss</dd>
         </dl>
       </div>
     </div>
-    <div class="swap-bar">
-      <span>POD SWaP: <b>225 g · 9.7 W</b> (155 g MEMS Gimbal + 70 g Nordic nRF9151)</span>
-      <span>CRYPTO: <b>HMAC-SHA256 + Replay Counter</b></span>
-      <span>SPECTRUM: <b>0 % Cellular · 0 % Aviation VHF</b></span>
-    </div>
-    <div class="motto">Laser when clear. <b>DECT NR+ through buildings &amp; dense fog.</b></div>
+    <div class="motto">Laser when clear. <b>Private, operator-free DECT NR+ through buildings &amp; fog.</b></div>
   </section>
 
   <!-- 6 · THE 3 ATTACK CIRCLES AROUND U-TOWER -->
@@ -493,24 +497,18 @@
               <stop offset="1" stop-color="#EF4444" stop-opacity=".02"/>
             </radialGradient>
           </defs>
-          <!-- Outer GPS Spoof Ring -->
           <circle cx="380" cy="320" r="304" fill="none" stroke="#F59E0B" stroke-opacity=".55" stroke-width="2" stroke-dasharray="10 8"/>
           <text x="380" y="12" fill="#FDE68A" font-size="17" font-weight="600" text-anchor="middle" font-family="JetBrains Mono">1. OUTER YELLOW · GPS SPOOFING</text>
-          <!-- Middle Red Jamming Ring -->
           <circle cx="380" cy="320" r="250" fill="url(#jam)" stroke="#EF4444" stroke-opacity=".65" stroke-width="2"/>
           <text x="380" y="62" fill="#FCA5A5" font-size="17" font-weight="600" text-anchor="middle" font-family="JetBrains Mono">2. MIDDLE RED · JAMMING (620 m)</text>
-          <!-- Inner Purple Core -->
           <circle cx="380" cy="320" r="78" fill="rgba(167,139,250,0.18)" stroke="#A78BFA" stroke-width="2.5" stroke-dasharray="7 6"/>
           <circle cx="380" cy="320" r="7" fill="#EF4444"/>
           <text x="380" y="422" fill="#C4B5FD" font-size="17" font-weight="600" text-anchor="middle" font-family="JetBrains Mono">3. INNER PURPLE · &lt;150 m CORE</text>
           <text x="380" y="356" fill="#FCA5A5" font-size="15" text-anchor="middle">U-Tower jammer</text>
-          <!-- DR-03 in core -->
           <circle cx="404" cy="296" r="9" fill="#F5F5F7"/><circle cx="404" cy="296" r="17" fill="none" stroke="#A78BFA" stroke-width="2.5"/>
           <text x="430" y="290" fill="#F5F5F7" font-size="19" font-weight="600">DR-03 · 53 m</text>
-          <!-- DR-07 middle -->
           <circle cx="195" cy="210" r="9" fill="#F5F5F7"/><circle cx="195" cy="210" r="17" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
           <text x="195" y="180" fill="#F5F5F7" font-size="19" font-weight="600" text-anchor="middle">DR-07 · DECT + QoS</text>
-          <!-- clear LoS drone outside -->
           <circle cx="620" cy="520" r="9" fill="#F5F5F7"/><circle cx="620" cy="520" r="17" fill="none" stroke="#10B981" stroke-width="2.5"/>
           <text x="620" y="556" fill="#34D399" font-size="18" font-weight="600" text-anchor="middle">DR-04 / 06 / 08 · Green LoS</text>
         </svg>
@@ -532,9 +530,9 @@
     </div>
   </section>
 
-  <!-- 6 · POP-UP -->
-  <section class="slide" style="--glow: rgba(167,139,250,0.10)" data-notes="So what does a drone do when every radio is gone? It climbs. After 1.5 seconds isolated, DR-03 switches to onboard inertial and visual odometry — no GPS, no RF needed — and climbs straight up. The moment it clears the 95 m roof, it has line of sight to the relay at 120 m, and the laser snaps back. 3.2 seconds, measured live. (~30 s)">
-    <div class="eyebrow" style="color:var(--pop)">Autonomous recovery</div>
+  <!-- 7 · POP-UP -->
+  <section class="slide" style="--glow: rgba(167,139,250,0.10)" data-notes="So what does DR-03 do when both laser and radio are gone? After 1.5 seconds isolated, it switches to onboard inertial and visual odometry — no GPS, no RF needed — and climbs straight up. The moment it clears the 95 m roof, it has line of sight to Relay DR-01 at 120 m, and the laser snaps back in 3.2 seconds. (~25 s)">
+    <div class="eyebrow" style="color:var(--pop)">Autonomous recovery · 10/10 Reachability</div>
     <div class="title">When every radio fails, <span class="c-pop">climb.</span></div>
     <div class="figure" style="margin-top:20px">
       <svg viewBox="0 0 1640 470" font-family="Inter, sans-serif">
@@ -545,23 +543,18 @@
         <line x1="0" y1="450" x2="1640" y2="450" stroke="#27272A" stroke-width="2"/>
         <line x1="60" y1="165" x2="1600" y2="165" stroke="#3F3F46" stroke-dasharray="4 8"/>
         <text x="1600" y="155" fill="#71717A" font-size="18" text-anchor="end" font-family="JetBrains Mono">95 m roof</text>
-        <!-- tower -->
         <rect x="560" y="165" width="150" height="285" fill="url(#bld2)" stroke="#F59E0B" stroke-opacity=".7" stroke-width="2"/>
         <text x="635" y="240" fill="#FBBF24" font-size="22" font-weight="700" text-anchor="middle">U-Tower</text>
-        <!-- HQ -->
         <circle cx="120" cy="245" r="11" fill="#07080B" stroke="#10B981" stroke-width="3"/>
         <text x="120" y="215" fill="#F5F5F7" font-size="19" font-weight="600" text-anchor="middle">HQ</text>
-        <!-- blocked line -->
         <line x1="120" y1="245" x2="560" y2="285" stroke="#10B981" stroke-width="3" opacity=".7"/>
         <g stroke="#EF4444" stroke-width="4" stroke-linecap="round"><line x1="550" y1="275" x2="570" y2="295"/><line x1="570" y1="275" x2="550" y2="295"/></g>
-        <!-- climb -->
         <line x1="830" y1="305" x2="830" y2="78" stroke="#A78BFA" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#ah)"/>
         <circle cx="830" cy="310" r="10" fill="#F5F5F7" opacity=".45"/>
         <text x="860" y="316" fill="#9A9AA3" font-size="19">50 m · isolated</text>
         <circle cx="830" cy="60" r="11" fill="#F5F5F7"/><circle cx="830" cy="60" r="22" fill="none" stroke="#A78BFA" stroke-width="2.5"/>
         <text x="860" y="52" fill="#F5F5F7" font-size="19" font-weight="600">125 m</text>
         <text x="860" y="76" fill="#C4B5FD" font-size="16" font-family="JetBrains Mono">INS/VIO · no GPS · no RF</text>
-        <!-- relay link -->
         <circle cx="1450" cy="88" r="11" fill="#F5F5F7"/><circle cx="1450" cy="88" r="22" fill="none" stroke="#10B981" stroke-width="2.5"/>
         <text x="1450" y="138" fill="#34D399" font-size="19" font-weight="600" text-anchor="middle">Relay DR-01 · 120 m</text>
         <line x1="852" y1="62" x2="1428" y2="87" stroke="#10B981" stroke-width="4"/>
@@ -576,77 +569,31 @@
     </div>
   </section>
 
-  <!-- 8 · DETECTION -->
-  <section class="slide" style="--glow: rgba(56,189,248,0.08)" data-notes="How do smart attackers bypass standard detectors? They turn the jammer up slowly like a dimmer switch. A rolling 4-second window adjusts like eyes in a darkening room and stays blind for 9.5 seconds (130 m of blind flight). Our Contrastive Detector freezes a 4-sensor takeoff photo (RSSI, SNR, Loss, GPS-INS offset) and catches the slow ramp at 0.0 seconds. When Jamming + Spoofing hit together, it flags yellow UNEXPLAINED instead of guessing. (~25 s)">
-    <div class="eyebrow" style="color:var(--sky)">Contrastive Detector · Frozen Takeoff Baseline</div>
+  <!-- 8 · CONTRASTIVE DETECTOR & OFFLINE HQ CO-PILOT -->
+  <section class="slide" style="--glow: rgba(56,189,248,0.08)" data-notes="How do smart attackers bypass standard detectors? They turn the jammer up slowly like a dimmer switch. A rolling 4-second window stays blind for 9.5 seconds (130 m of blind flight). Our Contrastive Detector freezes a 4-sensor takeoff photo and catches the slow ramp at 0.0 seconds. When Jamming + Spoofing hit together, it flags yellow UNEXPLAINED, our offline HQ LLM briefs the operator in 2 plain sentences, and [✓ Confirm Threat] shares a 16-byte fingerprint turning all 10 drones Blue. (~30 s)">
+    <div class="eyebrow" style="color:var(--sky)">Contrastive Detector &amp; Offline HQ Co-Pilot</div>
     <div class="title">Catch the dimmer-switch attack <span class="c-sky">at 0.0 s.</span></div>
     <div class="versus">
       <div class="b"><div class="who">Rolling 4 s window (blind 130 m)</div><div class="num c-sub">9.5<small>s</small></div></div>
       <div class="vs b">vs</div>
       <div class="b"><div class="who" style="color:var(--sky)">Frozen takeoff photo (4 sensors)</div><div class="num c-sky">0.0<small>s</small></div></div>
     </div>
-    <div class="c-sub b" style="font-size:24px;margin-top:20px;font-family:var(--mono)">⚡ Ramp Jammer (+1.55 dB/s) · RSSI · SNR · Packet Loss · GPS–INS Offset</div>
     <div class="minor">
-      <div class="b"><b>0.0 s vs 9.0 s</b>Catches slow GPS spoofing drift immediately.</div>
-      <div class="b"><b style="color:var(--dect)">Yellow UNEXPLAINED</b>🎯 Coordinated RF+GNSS: honest about unknown patterns (MPI-SP principle).</div>
+      <div class="b"><b style="color:var(--dect)">Yellow UNEXPLAINED</b>🎯 Coordinated RF+GNSS: honest when a combined attack fits no known label.</div>
+      <div class="b"><b style="color:var(--pop)">Offline HQ LLM Co-Pilot</b>Never flies the drone — writes a 2-sentence briefing &amp; CRIT ticket at HQ.</div>
       <div class="b"><b style="color:var(--sky)">✓ Confirm → Blue</b>Broadcasts 16-byte fingerprint across all 10 drones in one click.</div>
     </div>
   </section>
 
-  <!-- 9 · LLM -->
-  <section class="slide" style="--glow: rgba(167,139,250,0.08)" data-notes="If the drone survives automatically, what is the LLM's job? It runs offline at HQ and never flies the drone — it is a human Co-Pilot: translates the sensor jump (z=24.6) into 2 plain sentences, files a CRIT ticket for the ground team, and gives the operator [✓ Confirm Threat] to share the 16-byte fingerprint across all 10 drones. (~20 s)">
-    <div class="eyebrow" style="color:var(--pop)">Offline HQ Co-Pilot · Human-in-the-Loop</div>
-    <div class="title">The LLM never flies the drone. <span class="c-pop">It briefs HQ.</span></div>
-    <div class="pipe">
-      <div class="node b"><div class="lbl">1 · Takeoff Photo</div><h4>4-Sensor Vector</h4><p>RSSI · SNR · Loss · GPS–INS offset</p></div>
-      <div class="arrow b">→</div>
-      <div class="node hl b"><div class="lbl">2 · Deterministic Math</div><h4>Contrastive Detector</h4><p>Flags z = 24.6 jump · Yellow UNEXPLAINED</p></div>
-      <div class="arrow b">→</div>
-      <div class="node llm b"><div class="lbl">3 · Offline HQ LLM</div><h4>Human Co-Pilot</h4><p>2-sentence briefing + CRIT ticket for ground team</p></div>
-      <div class="arrow b">→</div>
-      <div class="node b" style="border-color:rgba(56,189,248,0.5);background:rgba(56,189,248,0.06)"><div class="lbl">4 · ✓ Confirm Threat</div><h4>16-Byte Fingerprint</h4><p>Shared to all 10 drones → turns BLUE</p></div>
-    </div>
-    <div class="divider b"><span>Runs 100 % offline at HQ · zero flight-loop latency · optional RUB / Uni LLM switch</span></div>
-  </section>
-
-  <!-- 9 · RESULTS & R&D ROADMAP -->
-  <section class="slide" data-notes="In numbers: all 10 drones stay reachable under jamming and dense fog, the worst-case isolated drone recovers itself in 3.2 seconds via INS/VIO pop-up, slow attacks are caught at onset, and our hardware-agnostic pod plugs into any Morpheus airframe via MAVLink 2 + Ethernet with a clear 3-phase R&D roadmap. (~20 s)">
-    <div class="eyebrow">Results · Integration &amp; F&amp;E Roadmap</div>
-    <div class="title">What it adds up to.</div>
-    <div class="kpis">
-      <div class="kpi b"><div class="k c-fsoc">10<small>/10</small></div><div class="v">Drones reachable</div><div class="d">Under jamming, node loss &amp; dense fog.</div></div>
-      <div class="kpi b"><div class="k c-pop">3.2<small>s</small></div><div class="v">Worst-case recovery</div><div class="d">Double-fail healed by INS/VIO pop-up.</div></div>
-      <div class="kpi b"><div class="k c-sky">0.0<small>s</small></div><div class="v">Slow-attack detection</div><div class="d">Contrastive prototype vs 9.5 s rules.</div></div>
-      <div class="kpi b"><div class="k">225<small>g</small></div><div class="v">Hardware-agnostic pod</div><div class="d">MAVLink 2 / Ethernet into Morpheus Leitstand.</div></div>
-    </div>
-    <div class="roadmap b">
-      <div class="rm-step">
-        <div class="rm-tag">Phase 1 · Months 1–3 (TRL 4)</div>
-        <h4>COTS DECT NR+ Bench &amp; Crypto Mesh</h4>
-        <p>Nordic nRF9151 dev-kits + HMAC-SHA256 OLSRv2 routing + MAVLink 2 bridge into Morpheus Leitstand.</p>
-      </div>
-      <div class="rm-step">
-        <div class="rm-tag" style="color:var(--dect)">Phase 2 · Months 4–8 (TRL 5–6)</div>
-        <h4>1550 nm MEMS Gimbal Airframe Pod</h4>
-        <p>Integrate 225 g hybrid FSOC/DECT pod on 2 Morpheus relay drones + 1 canyon drone over Dortmund test range.</p>
-      </div>
-      <div class="rm-step">
-        <div class="rm-tag" style="color:var(--pop)">Phase 3 · Months 9–12 (TRL 7)</div>
-        <h4>SAIL II/III BVLOS Dortmund Trial</h4>
-        <p>10-drone live trial (Klinikum Mitte ↔ Westfalenhallen) with autonomous INS/VIO Pop-Up &amp; RTH certification.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 11 · LIVE DEMO -->
-  <section class="slide s-demo" data-notes="Now we open Mission Control and walk left to right: 1) Left Sidebar: 10 drones & 2 channels (FSOC Laser + DECT NR+). 2) Center 3D Map: Jamming + GPS Spoofing around the U-Tower (3 circles + DR-03 Pop-Up). 3) Right Top: 100% Reachability & Video Shedding (0% video so C2 stays 100%). 4) Right Bottom: Ramp Jammer (0.0s vs 9.5s), Coordinated RF+GNSS (Yellow UNEXPLAINED), and LLM Co-Pilot + Confirm Threat (16-byte fingerprint -> BLUE). (~2 min)">
+  <!-- 9 · LIVE DEMO -->
+  <section class="slide s-demo" data-notes="Now we open Mission Control and walk left to right: 1) Left Sidebar: 10 drones & 2 channels (FSOC Laser + Private DECT NR+). 2) Center 3D Map: Jamming + GPS Spoofing around the U-Tower (3 circles + DR-03 Pop-Up in 3.2 s). 3) Right Top: 100% Reachability & Video Shedding (0% video so C2 stays 100%). 4) Right Bottom: Ramp Jammer (0.0s vs 9.5s), Coordinated RF+GNSS (Yellow UNEXPLAINED), and LLM Co-Pilot + Confirm Threat (16-byte fingerprint -> BLUE). (~2 min)">
     <div class="eyebrow">Live demo · Left-to-Right Walkthrough</div>
     <div class="title" style="font-size:120px">Let's break it. <span class="c-fsoc">Live.</span></div>
     <a class="launch" href="index.html">Open mission control <span>→ index.html</span></a>
     <div class="steps">
       <div class="st"><div class="n">01 · LEFT</div><h4>10 Drones &amp; 2 Channels</h4><p>Private sky mesh (<span class="key">10.41.0.x</span>). Green FSOC Laser (1 Gbps) + Orange DECT NR+ relay.</p></div>
       <div class="st"><div class="n">02 · CENTER</div><h4>3 Circles at U-Tower</h4><p><span class="key">J</span><span class="key">G</span><span class="key">F</span> Spoof rejected, Jamming switches to DECT, DR-03 Pop-Up climbs.</p></div>
-      <div class="st"><div class="n">03 · RIGHT TOP</div><h4>Metrics &amp; QoS Shedding</h4><p>100 % Reachability · Video shed to <b>0 %</b> so C2 steering holds <b>100 %</b>.</p></div>
+      <div class="st"><div class="n">03 · RIGHT TOP</div><h4>10/10 &amp; QoS Shedding</h4><p>100 % Reachability · Video shed to <b>0 %</b> so C2 steering holds <b>100 %</b>.</p></div>
       <div class="st"><div class="n">04 · RIGHT BOT</div><h4>Contrastive &amp; LLM</h4><p><span class="key">⚡</span> 0.0 s vs 9.5 s · <span class="key">🎯</span> Yellow UNEXPLAINED → <span class="key">✓</span> 16-B fingerprint → Blue.</p></div>
     </div>
   </section>
@@ -658,7 +605,7 @@
 <div class="nav-bar" id="navBar">
   <button class="nav-btn" id="btnPrevSlide" title="Previous Slide">« Slide</button>
   <button class="nav-btn" id="btnPrev" title="Back (←)">← Back</button>
-  <span class="nav-count" id="navCount">01 / 11</span>
+  <span class="nav-count" id="navCount">01 / 09</span>
   <button class="nav-btn" id="btnNext" title="Next (→ / Space)">Next →</button>
   <div class="nav-sep"></div>
   <button class="nav-btn" id="btnNotesToggle" title="Speaker Notes (N)">Notes</button>
