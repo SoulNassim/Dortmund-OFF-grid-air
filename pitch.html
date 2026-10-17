@@ -223,6 +223,7 @@
   .member-role { font-family: var(--mono); font-size: 16px; letter-spacing: .11em; text-transform: uppercase; color: var(--mut); margin-bottom: 6px; }
   .member-name { font-size: 36px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.08; }
   .member-desc { font-size: 22px; line-height: 1.48; color: var(--sub); margin-top: 26px; }
+  .member-desc b { color: var(--ink); font-weight: 600; }
   .member-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
   .member-tags span {
     font-family: var(--mono); font-size: 16px; padding: 7px 14px; border-radius: 999px;
@@ -305,7 +306,66 @@
     </div>
   </section>
 
-  <!-- 2 · PROBLEM (STATUS QUO TODAY) -->
+  <!-- 2 · THE TEAM -->
+  <section class="slide" style="--glow: rgba(56,189,248,0.08)" data-notes="We are three brothers from the Ruhr area combining industrial AI, ML threat intelligence, and systems engineering: Nassim studies Wirtschaftsinformatik and builds industrial LLM systems at RUB startup GenAI4Maintenance; Ilias Amir studies Applied Computer Science and builds ML/LLM Threat Intelligence systems; and Sami studies Wirtschaftsinformatik focusing on systems architecture and mission operations. (~15 s)">
+    <div class="eyebrow">The team · Ruhr-Area AI &amp; Systems</div>
+    <div class="title">Three brothers. <span class="c-fsoc">Industrial AI meets Threat Intel.</span></div>
+    <div class="team-grid">
+      <div class="member-card m-fsoc b">
+        <div>
+          <div class="member-top">
+            <div class="avatar">NS</div>
+            <div>
+              <div class="member-role c-fsoc">Wirtschaftsinformatik · GenAI4Maintenance (RUB)</div>
+              <div class="member-name">Nassim Soultana</div>
+            </div>
+          </div>
+          <p class="member-desc">Builds industrial LLM systems at Ruhr-Uni Bochum startup <b>GenAI4Maintenance</b>. Led the 3D Dortmund simulation, FSOC / DECT NR+ mesh &amp; fog physics, and the Mission Control HUD.</p>
+        </div>
+        <div class="member-tags">
+          <span>GenAI4Maintenance · RUB</span>
+          <span>3D Sim &amp; Mesh Physics</span>
+          <span>Industrial LLMs</span>
+        </div>
+      </div>
+      <div class="member-card m-pop b">
+        <div>
+          <div class="member-top">
+            <div class="avatar">IS</div>
+            <div>
+              <div class="member-role c-pop">Applied Computer Science · ML Threat Intel</div>
+              <div class="member-name">Ilias Amir Soultana</div>
+            </div>
+          </div>
+          <p class="member-desc">Broad industry track record in LLM engineering; currently building an <b>ML &amp; LLM-based Threat Intelligence</b> platform. Architected our contrastive detector, HMAC-SHA256 engine &amp; Security Co-Pilot.</p>
+        </div>
+        <div class="member-tags">
+          <span>ML Threat Intelligence</span>
+          <span>Contrastive Detection</span>
+          <span>LLM Co-Pilot</span>
+        </div>
+      </div>
+      <div class="member-card m-dect b">
+        <div>
+          <div class="member-top">
+            <div class="avatar">SS</div>
+            <div>
+              <div class="member-role c-dect">Wirtschaftsinformatik · Systems &amp; Operations</div>
+              <div class="member-name">Sami Soultana</div>
+            </div>
+          </div>
+          <p class="member-desc">Focuses on resilient enterprise &amp; logistics architectures. Designed our 4-tier QoS traffic shedding, 225 g pod SWaP &amp; BNetzA regulatory model, and Morpheus Leitstand mission profiles.</p>
+        </div>
+        <div class="member-tags">
+          <span>QoS &amp; Link Resilience</span>
+          <span>BNetzA / ETSI Spec</span>
+          <span>Morpheus Leitstand Ops</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · PROBLEM (STATUS QUO TODAY) -->
   <section class="slide" style="--glow: rgba(239,68,68,0.07)" data-notes="Today, commercial drone fleets fly on 2.4 or 5.8 GHz radio and public 4G/5G cellular, with GPS L1 for navigation. In an off-grid crisis or electronic attack over a city, that status quo collapses in three ways at once: a cheap broadband jammer wipes out 2.4 GHz and public cell towers fail; star-topology links have no drone-to-drone relay and video starves C2; and standard autopilots blindly follow spoofed GPS while rolling-average alarms miss slow attacks for nine seconds. (~25 s)">
     <div class="eyebrow">The problem · How drone fleets fly today</div>
     <div class="title">Today's fleets rely on <span class="c-crit">2.4 GHz, 4G/5G &amp; GPS.</span> <span class="dim">In a crisis, all three fail.</span></div>
@@ -561,65 +621,6 @@
         <div class="rm-tag" style="color:var(--pop)">Phase 3 · Months 9–12 (TRL 7)</div>
         <h4>SAIL II/III BVLOS Dortmund Trial</h4>
         <p>10-drone live trial (Klinikum Mitte ↔ Westfalenhallen) with autonomous INS/VIO Pop-Up &amp; RTH certification.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10 · TEAM -->
-  <section class="slide" style="--glow: rgba(56,189,248,0.08)" data-notes="Built in 24 hours at the DO-DATA-Hackathon 2026 by Nassim Soultana, Ilias Amir Soultana, and Sami Soultana — combining real-time 3D aerospace & RF/optical simulation, deterministic contrastive threat detection & LLM incident response, and Morpheus Leitstand QoS & regulatory systems engineering. (~15 s)">
-    <div class="eyebrow">The team · DO-DATA-Hackathon 2026</div>
-    <div class="title">Built by <span class="c-fsoc">engineers</span> who ship under fire.</div>
-    <div class="team-grid">
-      <div class="member-card m-fsoc b">
-        <div>
-          <div class="member-top">
-            <div class="avatar">NS</div>
-            <div>
-              <div class="member-role c-fsoc">Aerospace &amp; RF/Optical · 3D HUD</div>
-              <div class="member-name">Nassim Soultana</div>
-            </div>
-          </div>
-          <p class="member-desc">Designed the hybrid 1550 nm FSOC Laser + 1.9 GHz DECT NR+ mesh topology, 3D Dortmund building raycast &amp; Mie-scattering fog physics, autonomous INS/VIO Vertical Pop-Up, and the 60 fps Mission Control &amp; Drone Inspector HUD.</p>
-        </div>
-        <div class="member-tags">
-          <span>FSOC 1550 nm / DECT NR+</span>
-          <span>3D Raycast &amp; Fog Physics</span>
-          <span>INS/VIO Pop-Up</span>
-        </div>
-      </div>
-      <div class="member-card m-pop b">
-        <div>
-          <div class="member-top">
-            <div class="avatar">IS</div>
-            <div>
-              <div class="member-role c-pop">AI Security &amp; Anomaly Detection</div>
-              <div class="member-name">Ilias Amir Soultana</div>
-            </div>
-          </div>
-          <p class="member-desc">Architected the deterministic 2 Hz Python physics &amp; HMAC-SHA256 zero-trust backend, per-drone Contrastive Prototype Detector (0.0 s slow-ramp detection vs 9.5 s rules), one-click online threat learning, and the LLM Security Co-Pilot.</p>
-        </div>
-        <div class="member-tags">
-          <span>Contrastive Prototypes</span>
-          <span>HMAC-SHA256 Mesh Auth</span>
-          <span>LLM Security Co-Pilot</span>
-        </div>
-      </div>
-      <div class="member-card m-dect b">
-        <div>
-          <div class="member-top">
-            <div class="avatar">SS</div>
-            <div>
-              <div class="member-role c-dect">Mesh QoS, SWaP &amp; Operations</div>
-              <div class="member-name">Sami Soultana</div>
-            </div>
-          </div>
-          <p class="member-desc">Engineered the 4-tier QoS traffic prioritization &amp; emergency video shedding (12 kbps C2 lock), the 225 g / 9.7 W hardware SWaP &amp; BNetzA / ETSI regulatory compliance model, and the Dortmund medical &amp; critical-infrastructure mission profiles.</p>
-        </div>
-        <div class="member-tags">
-          <span>QoS Traffic Shedding</span>
-          <span>225 g Pod SWaP &amp; BNetzA</span>
-          <span>Morpheus Leitstand Ops</span>
-        </div>
       </div>
     </div>
   </section>
